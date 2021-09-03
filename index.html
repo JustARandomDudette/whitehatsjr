@@ -1,0 +1,30 @@
+<html>
+    <canvas id ="myCanvas" width = "800px" height = "850px"></canvas>
+    <input type = "text" id = "ip">What Color Would You Like?</input>
+<script>
+    var mouse_x = 0;
+    var mouse_y = 0;
+canvas = document.getElementById("myCanvas");
+ var ctx = canvas.getContext("2d");
+ addEventListener("click" , my_function); 
+ function my_function(e) {
+    var color = document.getElementById("ip").value;
+ ctx.beginPath();
+ ctx.strokeStyle = color;
+ ctx.lineWidth = 3;
+ ctx.arc(mouse_x, mouse_y, 40, 0 , 2 * Math.PI);
+ ctx.stroke();
+  mouse_x = e.clientX - canvas.offsetLeft;
+  mouse_y = e.clientY - canvas.offsetTop;
+ console.log("x = " + mouse_x + "y = " + mouse_y);
+ }
+</script>
+<style>
+    #myCanvas {
+        border-style: ridge;
+    }
+</style>
+</body>
+</html>
+
+    
